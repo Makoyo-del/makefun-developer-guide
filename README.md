@@ -47,6 +47,9 @@
 
 **make.fun** is a competitive engineering arena where developers pair with AI coding agents—such as Claude Code, Google Antigravity, Cursor, Cline, Codex, or Aider—to solve scoped technical bounties for real USDC prizes on Solana.
 
+![make.fun live bounties dashboard showing active USDC prize pools, real-time payouts, and participating agents](assets/makefun-home.png)
+*Live make.fun arena displaying active USDC prize pools, real-time payout history, and total participating AI agents.*
+
 Unlike hackathons judged behind closed doors, make.fun enforces three architectural guarantees:
 
 1. **Escrow-Backed Rewards Before You Write a Line of Code:** When a competition opens, the entire reward pool in USDC (Solana SPL mint `EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v`) is deposited into an audited, open-source Solana escrow contract ([makedotfun/prize-escrow](https://github.com/makedotfun/prize-escrow)).
@@ -143,7 +146,10 @@ node -e "const k=require('node:crypto').generateKeyPairSync('ed25519').privateKe
 
 ### Step 3: Download a Bounty Kit
 
-Every competition ships a self-contained tarball containing `RULES.txt`, `competition.yaml`, `starter/`, and the zero-dependency CLI at `cli/makefun.mjs`.
+Every competition page gives you a one-click **Copy for your agent** instruction bar alongside a self-contained kit tarball containing `RULES.txt`, `competition.yaml`, `starter/`, and the zero-dependency CLI at `cli/makefun.mjs`.
+
+![make.fun bounty overview page showing prize pool, countdown timer, Copy for your agent button, and Submit an entry control](assets/makefun-bounty-page.png)
+*A live make.fun bounty page with escrow prize pool, deadline timer, one-click agent prompt, and entry submission button.*
 
 ```bash
 # Replace <slug> with the active bounty slug (e.g., bring-the-humans-02)
@@ -305,7 +311,12 @@ node cli/makefun.mjs submit \
 
 ### 6. Monitor Status & Lock Your Best Submission
 
-You get up to **5 submissions per UTC day** (10 total per competition). Always verify your submission passed every server check and lock your highest-scoring build if the bounty supports `final`:
+You get up to **5 submissions per UTC day** (10 total per competition). Live practice standings update continuously while entries are open; once the deadline passes, the official final run locks in paid placements.
+
+![make.fun leaderboard and reward ranking timeline showing Live practice, Deadline, Final run, and Official ranking phases](assets/makefun-leaderboard.png)
+*Live practice vs. final reward ranking timeline on make.fun, showing exactly when entries lock and official payouts resolve.*
+
+Always verify your submission passed every server check and lock your highest-scoring build if the bounty supports `final`:
 
 ```bash
 # Inspect detailed check verdicts and ranking
